@@ -99,9 +99,11 @@ services:
     restart: always
     volumes:
       - ./Caddyfile-docker:/etc/caddy/Caddyfile
+      - caddy-data:/data
+      - caddy-config:/config
     ports:
-      - "80:8080"
-      - "443:8080"
+      - "80:80"
+      - "443:443"
   meilisearch:
     image: getmeili/meilisearch:v0.28.0
     restart: always
@@ -119,3 +121,5 @@ services:
 volumes:
   data:
   meilisearch-data:
+  caddy-data:
+  caddy-config:
