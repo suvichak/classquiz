@@ -25,9 +25,7 @@ services:
       - db
       - redis
 
-    environment:
-      # --- DON'T CHANGE FROM HERE ---
-      &env_vars
+    environment: &env_vars
       DB_URL: "postgresql://postgres:classquiz@db:5432/classquiz" # DON'T CHANGE
       REDIS: "redis://redis:6379/0?decode_responses=True" # DON'T CHANGE
       SECRET_KEY: "427f4c2ebbcbeac1c923c05f42520d07ee4306c64c48696b3e01148a1974468e" # Don't change it manually, use the one-liner provided in the documentation
