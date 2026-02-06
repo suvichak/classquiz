@@ -100,7 +100,8 @@ services:
     volumes:
       - ./Caddyfile-docker:/etc/caddy/Caddyfile
     ports:
-      - "8888:8080" # The 8888 can be changed.
+      - "80:8080"
+      - "443:8080"
   meilisearch:
     image: getmeili/meilisearch:v0.28.0
     restart: always
